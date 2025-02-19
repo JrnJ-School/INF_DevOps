@@ -1,5 +1,9 @@
 name: 'coverage'
 on:
+    push:
+        branches:
+            # - 'api/**'
+            - main
     pull_request:
         branches:
             - main
