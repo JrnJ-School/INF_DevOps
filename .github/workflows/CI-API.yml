@@ -1,4 +1,4 @@
-name: 'coverage'
+name: 'Jest Code Coverage'
 on:
     push:
         branches:
