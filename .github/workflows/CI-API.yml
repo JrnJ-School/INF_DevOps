@@ -21,13 +21,11 @@ jobs:
 
             - name: Install dependencies
               run: npm install
-              with:
-                working-directory: './api'
+              working-directory: './api'
 
             - name: Run tests
               run: npm test
-              with:
-                working-directory: './api'
+              working-directory: './api'
 
             - name: Jest Code Coverage
               uses: ArtiomTr/jest-coverage-report-action@v2
