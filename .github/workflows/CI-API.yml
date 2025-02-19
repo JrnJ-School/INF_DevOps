@@ -2,7 +2,6 @@ name: 'coverage'
 on:
     push:
         branches:
-            # - 'api/**'
             - main
     pull_request:
         branches:
@@ -12,5 +11,23 @@ jobs:
     coverage:
         runs-on: ubuntu-latest
         steps:
-            - uses: actions/checkout@v3
-            - uses: ArtiomTr/jest-coverage-report-action@v2
+            - name: Checkout
+              uses: actions/checkout@v3
+
+            - name: Setup Node.JS
+              uses: actions/setup-node@v2
+              with:
+                node-version: '20'
+
+            - name: Install dependencies
+              run: npm install
+              with:
+                working-directory: ./api
+
+            - name: Run tests
+              run: npm test
+              with:
+                working-directory: ./api
+
+            - name: Jest Code Coverage
+              uses: ArtiomTr/jest-coverage-report-action@v2
