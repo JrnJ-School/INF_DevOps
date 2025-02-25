@@ -18,5 +18,6 @@ EXPOSE 3000
 # This runs everytime the container STARTS
 CMD ["npm", "start"]
 
+# UPDATE NODE TO @@ FIRST!!!
 # DATABASE: docker run -d --name mongo-db-school --network mongo-network mongo
 # APP: docker run -p 3000:3000 --network mongo-network my-api
