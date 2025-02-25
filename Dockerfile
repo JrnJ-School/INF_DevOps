@@ -19,5 +19,6 @@ EXPOSE 3000
 CMD ["npm", "start"]
 
 # UPDATE NODE TO @@ FIRST!!!
+# BEFORE: docker network create -d bridge mongo-network
 # DATABASE: docker run -d --name mongo-db-school --network mongo-network mongo
 # APP: docker run -p 3000:3000 --network mongo-network my-api
