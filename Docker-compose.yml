@@ -7,15 +7,16 @@ services:
     networks:
       - mongodb-network
     ports:
-      - "3000:3000"
+      - "3000:${PORT}"
     environment:
-      - PORT=3000
-      - MONGO_URL=mongodb://mongodb-database:27017/mongodb
-      - HOST=mongodb-database
-      - DB_NAME=mongodb-database
+      - PORT=${PORT}
+      - MONGO_URL=${MONGO_URL}
+      - HOST=${HOST}
+      - DB_NAME=${DB_NAME}
 
   mongodb-database:
     container_name: mongodb-database
+    restart: always
     networks:
       - mongodb-network
     image: mongo:latest
