@@ -9,11 +9,13 @@ RUN npm install
 
 COPY . .
 
-ENV PORT=3000
+# ENV PORT=3000
+ENV PORT=80
 ENV MONGO_URL=mongodb://mongodb-database:27017
 ENV HOST=mongodb-database
 
-EXPOSE 3000
+# EXPOSE 3000
+EXPOSE 80
 
 # This runs everytime the container STARTS
 CMD ["npm", "start"]

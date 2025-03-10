@@ -4,6 +4,8 @@ services:
     build: .
     depends_on:
       - mongodb-database
+    networks:
+      - mongodb-network
     ports:
       - "80:3000"
     environment:
@@ -15,6 +17,12 @@ services:
   mongodb-database:
     container_name: mongodb-database
     restart: always
+    networks:
+      - mongodb-network
     image: mongo:latest
     volumes: 
       - ./mydata:/data/db
+
+networks:
+  mongodb-network:
+    driver: bridge
