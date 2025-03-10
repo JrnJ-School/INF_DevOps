@@ -7,9 +7,9 @@ services:
     networks:
       - mongodb-network
     ports:
-      - "3000:${PORT}"
+      - "3000:3000"
     environment:
-      - PORT=${PORT}
+      - PORT=3000
       - MONGO_URL=${MONGO_URL}
       - HOST=${HOST}
       - DB_NAME=${DB_NAME}
