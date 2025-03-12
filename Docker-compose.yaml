@@ -1,5 +1,5 @@
 services:
-  mongodb-app:
+  my-app:
     build: ./api
     depends_on:
       - mongodb-database
