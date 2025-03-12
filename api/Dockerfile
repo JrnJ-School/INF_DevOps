@@ -2,7 +2,7 @@ FROM node:22
 
 WORKDIR /api
 
-COPY package*.json ../
+COPY package*.json ./
 
 # This runs during container BUILDING (and can be chached)
 RUN npm install

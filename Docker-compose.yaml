@@ -1,7 +1,7 @@
 services:
   mongodb-app:
     container_name: mongodb-app
-    build: .
+    build: ./api
     depends_on:
       - mongodb-database
     networks:
