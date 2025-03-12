@@ -11,7 +11,7 @@ COPY . .
 
 ENV PORT=3000
 ENV MONGO_URL=mongodb://mongodb-database:27017
-ENV HOST=mongodb-database
+# ENV HOST=mongodb-database
 
 EXPOSE 3000
 
