@@ -13,4 +13,6 @@ services:
     restart: always
     image: mongo:latest
     volumes: 
-      - ./mydata:/data/db
+      - mydatabase:/data/db
+volumes:
+  mydatabase:
