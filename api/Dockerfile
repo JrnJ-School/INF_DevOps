@@ -2,7 +2,7 @@ FROM node:22
 
 WORKDIR /api
 
-COPY package*.json ../
+COPY package*.json ./
 
 # This runs during container BUILDING (and can be chached)
 RUN npm install
@@ -11,7 +11,7 @@ COPY . .
 
 ENV PORT=3000
 ENV MONGO_URL=mongodb://mongodb-database:27017
-ENV HOST=mongodb-database
+# ENV HOST=mongodb-database
 
 EXPOSE 3000
 
