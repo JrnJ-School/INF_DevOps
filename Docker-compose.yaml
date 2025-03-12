@@ -1,11 +1,8 @@
 services:
   mongodb-app:
-    container_name: mongodb-app
     build: ./api
     depends_on:
       - mongodb-database
-    networks:
-      - mongodb-network
     ports:
       - "80:3000"
     environment:
@@ -15,10 +12,7 @@ services:
       - DB_NAME=${DB_NAME}
 
   mongodb-database:
-    container_name: mongodb-database
     restart: always
-    networks:
-      - mongodb-network
     image: mongo:latest
     volumes: 
       - ./mydata:/data/db
