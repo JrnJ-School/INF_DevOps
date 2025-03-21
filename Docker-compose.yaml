@@ -14,5 +14,12 @@ services:
     image: mongo:latest
     volumes: 
       - mydatabase:/data/db
+
+  prometheus:
+    image: 'prom/prometheus:latest'
+    ports:
+      - '9090:9090'
+    volumes:
+      - './prometheus.yml:/etc/prometheus/prometheus.yml'
 volumes:
   mydatabase:

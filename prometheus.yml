@@ -1,0 +1,16 @@
+global:
+  scrape_interval: 1s
+  evaluation_interval: 5s
+
+scrape_configs:
+  - job_name: 'promotheus'
+    static_configs:
+      - targets: ['my-app:3000']
+  
+  - job_name: 'mongodb'
+    static_configs:
+      - targets: ['mongodb-database:27017']
+
+  - job_name: 'mongodb-exporter'
+    static_configs:
+      - targets: ['mongodb-exporter:9216']
